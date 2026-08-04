@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Liste Xeon E5 triable</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #0f172a;
+      color: #e5e7eb;
+      margin: 0;
+      padding: 20px;
+    }
+    h1 {
+      margin-bottom: 10px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+      background: #020617;
+    }
+    th, td {
+      padding: 8px 10px;
+      border-bottom: 1px solid #1f2937;
+      text-align: left;
+      font-size: 14px;
+    }
+    th {
+      cursor: pointer;
+      background: #111827;
+      position: sticky;
+      top: 0;
+      z-index: 1;
+    }
+    th:hover {
+      background: #1f2937;
+    }
+    tr:nth-child(even) {
+      background: #030712;
+    }
+    .numeric {
+      text-align: right;
+    }
+    .tag {
+      display: inline-block;
+      padding: 2px 6px;
+      border-radius: 4px;
+      background: #1d4ed8;
+      font-size: 11px;
+      margin-right: 4px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Xeon E5 – tableau triable</h1>
+  <p>Clique sur un en‑tête pour trier par ce critère (ascendant / descendant).</p>
+
+  <table id="xeonTable">
+    <thead>
+      <tr>
+        <th data-type="string">Modèle</th>
+        <th data-type="number">Cœurs</th>
+        <th data-type="number">Threads</th>
+        <th data-type="number">Cache L3 (Mo)</th>
+        <th data-type="number">Freq base (GHz)</th>
+        <th data-type="number">Freq turbo (GHz)</th>
+        <th data-type="string">Spécial</th>
+        <th data-type="string">Date sortie</th>
+        <th data-type="number">Perf single‑core (%)</th>
+        <th data-type="number">Perf multi‑core (%)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Exemple de lignes (tu peux en ajouter autant que tu veux) -->
+
+      <!-- 100% de référence = Xeon E5-2699 v4 en multicœur -->
+      <tr>
+        <td>Xeon E5‑2699 v4</td>
+        <td class="numeric">22</td>
+        <td class="numeric">44</td>
+        <td class="numeric">55</td>
+        <td class="numeric">2.2</td>
+        <td class="numeric">3.6</td>
+        <td>
+          <span class="tag">Top multicœur</span>
+          <span class="tag">Broadwell‑EP</span>
+        </td>
+        <td>2016‑06‑20</td>
+        <td class="numeric">65</td>   <!-- ex: 65% vs meilleur single-core (Ryzen-like ref) -->
+        <td class="numeric">100</td>  <!-- ref multicœur -->
+      </tr>
+
+      <tr>
+        <td>Xeon E5‑2690 v4</td>
+        <td class="numeric">14</td>
+        <td class="numeric">28</td>
+        <td class="numeric">35</td>
+        <td class="numeric">2.6</td>
+        <td class="numeric">3.5</td>
+        <td>
+          <span class="tag">Sweet spot</span>
+          <span class="tag">Meilleur single‑core v4</span>
+        </td>
+        <td>2016‑03‑31</td>
+        <td class="numeric">75</td>
+        <td class="numeric">80</td>
+      </tr>
+
+      <tr>
+        <td>Xeon E5‑2680 v4</td>
+        <td class="numeric">14</td>
+        <td class="numeric">28</td>
+        <td class="numeric">35</td>
+        <td class="numeric">2.4</td>
+        <td class="numeric">3.3</td>
+        <td>
+          <span class="tag">Perf/prix</span>
+          <span class="tag">Broadwell‑EP</span>
+        </td>
+        <td>2016‑03‑31</td>
+        <td class="numeric">70</td>
+        <td class="numeric">78</td>
+      </tr>
+
+      <tr>
+        <td>Xeon E5‑2697 v4</td>
+        <td class="numeric">18</td>
+        <td class="numeric">36</td>
+        <td class="numeric">45</td>
+        <td class="numeric">2.3</td>
+        <td class="numeric">3.6</td>
+        <td>
+          <span class="tag">Haut de gamme</span>
+        </td>
+        <td>2016‑03‑31</td>
+        <td class="numeric">68</td>
+        <td class="numeric">92</td>
+      </tr>
+
+      <tr>
+        <td>Xeon E5‑2699 v3</td>
+        <td class="numeric">18</td>
+        <td class="numeric">36</td>
+        <td class="numeric">45</td>
+        <td class="numeric">2.3</td>
+        <td class="numeric">3.6</td>
+        <td>
+          <span class="tag">Haswell‑EP</span>
+        </td>
+        <td>2014‑09‑08</td>
+        <td class="numeric">60</td>
+        <td class="numeric">88</td>
+      </tr>
+
+      <tr>
+        <td>Xeon E5‑2697 v3</td>
+        <td class="numeric">14</td>
+        <td class="numeric">28</td>
+        <td class="numeric">35</td>
+        <td class="numeric">2.6</td>
+        <td class="numeric">3.6</td>
+        <td>
+          <span class="tag">Bon multicœur</span>
+        </td>
+        <td>2014‑09‑08</td>
+        <td class="numeric">62</td>
+        <td class="numeric">80</td>
+      </tr>
+
+      <tr>
+        <td>Xeon E5‑1680 v3</td>
+        <td class="numeric">8</td>
+        <td class="numeric">16</td>
+        <td class="numeric">20</td>
+        <td class="numeric">3.2</td>
+        <td class="numeric">3.8</td>
+        <td>
+          <span class="tag">Unlocked</span>
+          <span class="tag">OC 4.4+ GHz</span>
+          <span class="tag">Best single‑core v3</span>
+        </td>
+        <td>2014‑09‑08</td>
+        <td class="numeric">85</td>  <!-- proche Ryzen 2600X en SC -->
+        <td class="numeric">70</td>
+      </tr>
+
+      <tr>
+        <td>Xeon E5‑1650 v3</td>
+        <td class="numeric">6</td>
+        <td class="numeric">12</td>
+        <td class="numeric">15</td>
+        <td class="numeric">3.5</td>
+        <td class="numeric">3.8</td>
+        <td>
+          <span class="tag">OC possible</span>
+        </td>
+        <td>2014‑09‑08</td>
+        <td class="numeric">80</td>
+        <td class="numeric">60</td>
+      </tr>
+
+      <tr>
+        <td>Xeon E5‑2620 v3</td>
+        <td class="numeric">6</td>
+        <td class="numeric">12</td>
+        <td class="numeric">15</td>
+        <td class="numeric">2.4</td>
+        <td class="numeric">3.2</td>
+        <td>
+          <span class="tag">Entrée de gamme</span>
+        </td>
+        <td>2014‑09‑08</td>
+        <td class="numeric">55</td>
+        <td class="numeric">45</td>
+      </tr>
+
+      <!-- Ajoute ici tous les autres Xeon E5 que tu veux,
+           en gardant la même structure de colonnes. -->
+    </tbody>
+  </table>
+
+  <script>
+    (function () {
+      const table = document.getElementById("xeonTable");
+      const headers = table.querySelectorAll("th");
+      let sortState = {}; // {index: 'asc'|'desc'}
+
+      function compareValues(a, b, type) {
+        if (type === "number") {
+          const na = parseFloat(a) || 0;
+          const nb = parseFloat(b) || 0;
+          return na - nb;
+        } else {
+          return a.localeCompare(b, "fr", { numeric: true });
+        }
+      }
+
+      function sortTableByColumn(index, type) {
+        const tbody = table.querySelector("tbody");
+        const rows = Array.from(tbody.querySelectorAll("tr"));
+
+        const currentState = sortState[index] === "asc" ? "desc" : "asc";
+        sortState[index] = currentState;
+
+        rows.sort((rowA, rowB) => {
+          const cellA = rowA.children[index].textContent.trim();
+          const cellB = rowB.children[index].textContent.trim();
+
+          const cmp = compareValues(cellA, cellB, type);
+          return currentState === "asc" ? cmp : -cmp;
+        });
+
+        // Réinjecte les lignes triées
+        rows.forEach(row => tbody.appendChild(row));
+      }
+
+      headers.forEach((th, index) => {
+        th.addEventListener("click", () => {
+          const type = th.getAttribute("data-type") || "string";
+          sortTableByColumn(index, type);
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
