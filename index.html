@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <title>Liste Xeon E5 triable</title>
+  <title>Xeon E5 v3/v4 (X99) – Tableau triable</title>
   <style>
     body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -12,7 +12,13 @@
       padding: 20px;
     }
     h1 {
-      margin-bottom: 10px;
+      margin-bottom: 8px;
+    }
+    p {
+      margin-top: 0;
+      margin-bottom: 12px;
+      font-size: 14px;
+      color: #9ca3af;
     }
     table {
       width: 100%;
@@ -21,10 +27,10 @@
       background: #020617;
     }
     th, td {
-      padding: 8px 10px;
+      padding: 6px 8px;
       border-bottom: 1px solid #1f2937;
       text-align: left;
-      font-size: 14px;
+      font-size: 13px;
     }
     th {
       cursor: pointer;
@@ -49,17 +55,19 @@
       background: #1d4ed8;
       font-size: 11px;
       margin-right: 4px;
+      margin-bottom: 2px;
     }
   </style>
 </head>
 <body>
-  <h1>Xeon E5 – tableau triable</h1>
-  <p>Clique sur un en‑tête pour trier par ce critère (ascendant / descendant).</p>
+  <h1>Xeon E5 v3 / v4 – Plateforme X99 (LGA2011‑3)</h1>
+  <p>Clique sur un en‑tête pour trier par ce critère (ascendant / descendant). Les % de perf sont relatifs (100 = meilleur de la liste).</p>
 
   <table id="xeonTable">
     <thead>
       <tr>
         <th data-type="string">Modèle</th>
+        <th data-type="string">Génération</th>
         <th data-type="number">Cœurs</th>
         <th data-type="number">Threads</th>
         <th data-type="number">Cache L3 (Mo)</th>
@@ -72,11 +80,10 @@
       </tr>
     </thead>
     <tbody>
-      <!-- Exemple de lignes (tu peux en ajouter autant que tu veux) -->
-
-      <!-- 100% de référence = Xeon E5-2699 v4 en multicœur -->
+      <!-- v4 – Broadwell-EP -->
       <tr>
         <td>Xeon E5‑2699 v4</td>
+        <td>v4</td>
         <td class="numeric">22</td>
         <td class="numeric">44</td>
         <td class="numeric">55</td>
@@ -87,44 +94,27 @@
           <span class="tag">Broadwell‑EP</span>
         </td>
         <td>2016‑06‑20</td>
-        <td class="numeric">65</td>   <!-- ex: 65% vs meilleur single-core (Ryzen-like ref) -->
-        <td class="numeric">100</td>  <!-- ref multicœur -->
+        <td class="numeric">65</td>
+        <td class="numeric">100</td>
       </tr>
-
       <tr>
-        <td>Xeon E5‑2690 v4</td>
-        <td class="numeric">14</td>
-        <td class="numeric">28</td>
-        <td class="numeric">35</td>
-        <td class="numeric">2.6</td>
-        <td class="numeric">3.5</td>
+        <td>Xeon E5‑2698 v4</td>
+        <td>v4</td>
+        <td class="numeric">20</td>
+        <td class="numeric">40</td>
+        <td class="numeric">50</td>
+        <td class="numeric">2.2</td>
+        <td class="numeric">3.6</td>
         <td>
-          <span class="tag">Sweet spot</span>
-          <span class="tag">Meilleur single‑core v4</span>
+          <span class="tag">Haut de gamme</span>
         </td>
         <td>2016‑03‑31</td>
-        <td class="numeric">75</td>
-        <td class="numeric">80</td>
+        <td class="numeric">66</td>
+        <td class="numeric">96</td>
       </tr>
-
-      <tr>
-        <td>Xeon E5‑2680 v4</td>
-        <td class="numeric">14</td>
-        <td class="numeric">28</td>
-        <td class="numeric">35</td>
-        <td class="numeric">2.4</td>
-        <td class="numeric">3.3</td>
-        <td>
-          <span class="tag">Perf/prix</span>
-          <span class="tag">Broadwell‑EP</span>
-        </td>
-        <td>2016‑03‑31</td>
-        <td class="numeric">70</td>
-        <td class="numeric">78</td>
-      </tr>
-
       <tr>
         <td>Xeon E5‑2697 v4</td>
+        <td>v4</td>
         <td class="numeric">18</td>
         <td class="numeric">36</td>
         <td class="numeric">45</td>
@@ -137,24 +127,238 @@
         <td class="numeric">68</td>
         <td class="numeric">92</td>
       </tr>
+      <tr>
+        <td>Xeon E5‑2695 v4</td>
+        <td>v4</td>
+        <td class="numeric">18</td>
+        <td class="numeric">36</td>
+        <td class="numeric">45</td>
+        <td class="numeric">2.1</td>
+        <td class="numeric">3.3</td>
+        <td>
+          <span class="tag">Low freq</span>
+        </td>
+        <td>2016‑03‑31</td>
+        <td class="numeric">63</td>
+        <td class="numeric">88</td>
+      </tr>
+      <tr>
+        <td>Xeon E5‑2690 v4</td>
+        <td>v4</td>
+        <td class="numeric">14</td>
+        <td class="numeric">28</td>
+        <td class="numeric">35</td>
+        <td class="numeric">2.6</td>
+        <td class="numeric">3.5</td>
+        <td>
+          <span class="tag">Sweet spot</span>
+          <span class="tag">Best SC v4</span>
+        </td>
+        <td>2016‑03‑31</td>
+        <td class="numeric">75</td>
+        <td class="numeric">80</td>
+      </tr>
+      <tr>
+        <td>Xeon E5‑2687W v4</td>
+        <td>v4</td>
+        <td class="numeric">12</td>
+        <td class="numeric">24</td>
+        <td class="numeric">30</td>
+        <td class="numeric">3.0</td>
+        <td class="numeric">3.5</td>
+        <td>
+          <span class="tag">Workstation</span>
+          <span class="tag">High TDP</span>
+        </td>
+        <td>2016‑03‑31</td>
+        <td class="numeric">78</td>
+        <td class="numeric">72</td>
+      </tr>
+      <tr>
+        <td>Xeon E5‑2683 v4</td>
+        <td>v4</td>
+        <td class="numeric">16</td>
+        <td class="numeric">32</td>
+        <td class="numeric">40</td>
+        <td class="numeric">2.1</td>
+        <td class="numeric">3.0</td>
+        <td>
+          <span class="tag">Serveur</span>
+        </td>
+        <td>2016‑03‑31</td>
+        <td class="numeric">60</td>
+        <td class="numeric">82</td>
+      </tr>
+      <tr>
+        <td>Xeon E5‑2680 v4</td>
+        <td>v4</td>
+        <td class="numeric">14</td>
+        <td class="numeric">28</td>
+        <td class="numeric">35</td>
+        <td class="numeric">2.4</td>
+        <td class="numeric">3.3</td>
+        <td>
+          <span class="tag">Perf/prix</span>
+        </td>
+        <td>2016‑03‑31</td>
+        <td class="numeric">70</td>
+        <td class="numeric">78</td>
+      </tr>
+      <tr>
+        <td>Xeon E5‑2673 v4</td>
+        <td>v4</td>
+        <td class="numeric">16</td>
+        <td class="numeric">32</td>
+        <td class="numeric">40</td>
+        <td class="numeric">2.3</td>
+        <td class="numeric">3.6</td>
+        <td>
+          <span class="tag">OEM</span>
+        </td>
+        <td>2016‑03‑31</td>
+        <td class="numeric">69</td>
+        <td class="numeric">86</td>
+      </tr>
+      <tr>
+        <td>Xeon E5‑2670 v4</td>
+        <td>v4</td>
+        <td class="numeric">14</td>
+        <td class="numeric">28</td>
+        <td class="numeric">35</td>
+        <td class="numeric">2.3</td>
+        <td class="numeric">3.3</td>
+        <td>
+          <span class="tag">Serveur</span>
+        </td>
+        <td>2016‑03‑31</td>
+        <td class="numeric">68</td>
+        <td class="numeric">76</td>
+      </tr>
+      <tr>
+        <td>Xeon E5‑2660 v4</td>
+        <td>v4</td>
+        <td class="numeric">14</td>
+        <td class="numeric">28</td>
+        <td class="numeric">35</td>
+        <td class="numeric">2.0</td>
+        <td class="numeric">3.2</td>
+        <td>
+          <span class="tag">Low freq</span>
+        </td>
+        <td>2016‑03‑31</td>
+        <td class="numeric">64</td>
+        <td class="numeric">72</td>
+      </tr>
+      <tr>
+        <td>Xeon E5‑2650 v4</td>
+        <td>v4</td>
+        <td class="numeric">12</td>
+        <td class="numeric">24</td>
+        <td class="numeric">30</td>
+        <td class="numeric">2.2</td>
+        <td class="numeric">2.9</td>
+        <td>
+          <span class="tag">Serveur</span>
+        </td>
+        <td>2016‑03‑31</td>
+        <td class="numeric">60</td>
+        <td class="numeric">68</td>
+      </tr>
+      <tr>
+        <td>Xeon E5‑2640 v4</td>
+        <td>v4</td>
+        <td class="numeric">10</td>
+        <td class="numeric">20</td>
+        <td class="numeric">25</td>
+        <td class="numeric">2.4</td>
+        <td class="numeric">3.4</td>
+        <td>
+          <span class="tag">Mid‑range</span>
+        </td>
+        <td>2016‑03‑31</td>
+        <td class="numeric">72</td>
+        <td class="numeric">60</td>
+      </tr>
+      <tr>
+        <td>Xeon E5‑2630 v4</td>
+        <td>v4</td>
+        <td class="numeric">10</td>
+        <td class="numeric">20</td>
+        <td class="numeric">25</td>
+        <td class="numeric">2.2</td>
+        <td class="numeric">3.1</td>
+        <td>
+          <span class="tag">Entrée serveur</span>
+        </td>
+        <td>2016‑03‑31</td>
+        <td class="numeric">68</td>
+        <td class="numeric">56</td>
+      </tr>
+      <tr>
+        <td>Xeon E5‑2620 v4</td>
+        <td>v4</td>
+        <td class="numeric">8</td>
+        <td class="numeric">16</td>
+        <td class="numeric">20</td>
+        <td class="numeric">2.1</td>
+        <td class="numeric">3.0</td>
+        <td>
+          <span class="tag">Entrée de gamme</span>
+        </td>
+        <td>2016‑03‑31</td>
+        <td class="numeric">65</td>
+        <td class="numeric">48</td>
+      </tr>
+      <tr>
+        <td>Xeon E5‑2609 v4</td>
+        <td>v4</td>
+        <td class="numeric">8</td>
+        <td class="numeric">8</td>
+        <td class="numeric">20</td>
+        <td class="numeric">1.7</td>
+        <td class="numeric">1.7</td>
+        <td>
+          <span class="tag">Sans Turbo</span>
+        </td>
+        <td>2016‑03‑31</td>
+        <td class="numeric">40</td>
+        <td class="numeric">35</td>
+      </tr>
 
+      <!-- v3 – Haswell-EP -->
       <tr>
         <td>Xeon E5‑2699 v3</td>
+        <td>v3</td>
         <td class="numeric">18</td>
         <td class="numeric">36</td>
         <td class="numeric">45</td>
         <td class="numeric">2.3</td>
         <td class="numeric">3.6</td>
         <td>
-          <span class="tag">Haswell‑EP</span>
+          <span class="tag">Top v3 multicœur</span>
         </td>
         <td>2014‑09‑08</td>
         <td class="numeric">60</td>
         <td class="numeric">88</td>
       </tr>
-
+      <tr>
+        <td>Xeon E5‑2698 v3</td>
+        <td>v3</td>
+        <td class="numeric">16</td>
+        <td class="numeric">32</td>
+        <td class="numeric">40</td>
+        <td class="numeric">2.3</td>
+        <td class="numeric">3.6</td>
+        <td>
+          <span class="tag">Haut de gamme</span>
+        </td>
+        <td>2014‑09‑08</td>
+        <td class="numeric">61</td>
+        <td class="numeric">84</td>
+      </tr>
       <tr>
         <td>Xeon E5‑2697 v3</td>
+        <td>v3</td>
         <td class="numeric">14</td>
         <td class="numeric">28</td>
         <td class="numeric">35</td>
@@ -167,41 +371,160 @@
         <td class="numeric">62</td>
         <td class="numeric">80</td>
       </tr>
-
       <tr>
-        <td>Xeon E5‑1680 v3</td>
+        <td>Xeon E5‑2695 v3</td>
+        <td>v3</td>
+        <td class="numeric">14</td>
+        <td class="numeric">28</td>
+        <td class="numeric">35</td>
+        <td class="numeric">2.3</td>
+        <td class="numeric">3.3</td>
+        <td>
+          <span class="tag">Low freq</span>
+        </td>
+        <td>2014‑09‑08</td>
+        <td class="numeric">58</td>
+        <td class="numeric">76</td>
+      </tr>
+      <tr>
+        <td>Xeon E5‑2690 v3</td>
+        <td>v3</td>
+        <td class="numeric">12</td>
+        <td class="numeric">24</td>
+        <td class="numeric">30</td>
+        <td class="numeric">2.6</td>
+        <td class="numeric">3.5</td>
+        <td>
+          <span class="tag">Workstation</span>
+        </td>
+        <td>2014‑09‑08</td>
+        <td class="numeric">70</td>
+        <td class="numeric">70</td>
+      </tr>
+      <tr>
+        <td>Xeon E5‑2687W v3</td>
+        <td>v3</td>
+        <td class="numeric">10</td>
+        <td class="numeric">20</td>
+        <td class="numeric">25</td>
+        <td class="numeric">3.1</td>
+        <td class="numeric">3.5</td>
+        <td>
+          <span class="tag">Workstation</span>
+          <span class="tag">High TDP</span>
+        </td>
+        <td>2014‑09‑08</td>
+        <td class="numeric">78</td>
+        <td class="numeric">68</td>
+      </tr>
+      <tr>
+        <td>Xeon E5‑2683 v3</td>
+        <td>v3</td>
+        <td class="numeric">14</td>
+        <td class="numeric">28</td>
+        <td class="numeric">35</td>
+        <td class="numeric">2.0</td>
+        <td class="numeric">3.0</td>
+        <td>
+          <span class="tag">Serveur</span>
+        </td>
+        <td>2014‑09‑08</td>
+        <td class="numeric">55</td>
+        <td class="numeric">74</td>
+      </tr>
+      <tr>
+        <td>Xeon E5‑2680 v3</td>
+        <td>v3</td>
+        <td class="numeric">12</td>
+        <td class="numeric">24</td>
+        <td class="numeric">30</td>
+        <td class="numeric">2.5</td>
+        <td class="numeric">3.3</td>
+        <td>
+          <span class="tag">Perf/prix</span>
+        </td>
+        <td>2014‑09‑08</td>
+        <td class="numeric">68</td>
+        <td class="numeric">72</td>
+      </tr>
+      <tr>
+        <td>Xeon E5‑2670 v3</td>
+        <td>v3</td>
+        <td class="numeric">12</td>
+        <td class="numeric">24</td>
+        <td class="numeric">30</td>
+        <td class="numeric">2.3</td>
+        <td class="numeric">3.1</td>
+        <td>
+          <span class="tag">Serveur</span>
+        </td>
+        <td>2014‑09‑08</td>
+        <td class="numeric">64</td>
+        <td class="numeric">68</td>
+      </tr>
+      <tr>
+        <td>Xeon E5‑2660 v3</td>
+        <td>v3</td>
+        <td class="numeric">10</td>
+        <td class="numeric">20</td>
+        <td class="numeric">25</td>
+        <td class="numeric">2.6</td>
+        <td class="numeric">3.3</td>
+        <td>
+          <span class="tag">Mid‑range</span>
+        </td>
+        <td>2014‑09‑08</td>
+        <td class="numeric">69</td>
+        <td class="numeric">64</td>
+      </tr>
+      <tr>
+        <td>Xeon E5‑2650 v3</td>
+        <td>v3</td>
+        <td class="numeric">10</td>
+        <td class="numeric">20</td>
+        <td class="numeric">25</td>
+        <td class="numeric">2.3</td>
+        <td class="numeric">3.0</td>
+        <td>
+          <span class="tag">Serveur</span>
+        </td>
+        <td>2014‑09‑08</td>
+        <td class="numeric">63</td>
+        <td class="numeric">60</td>
+      </tr>
+      <tr>
+        <td>Xeon E5‑2640 v3</td>
+        <td>v3</td>
         <td class="numeric">8</td>
         <td class="numeric">16</td>
         <td class="numeric">20</td>
-        <td class="numeric">3.2</td>
-        <td class="numeric">3.8</td>
+        <td class="numeric">2.6</td>
+        <td class="numeric">3.4</td>
         <td>
-          <span class="tag">Unlocked</span>
-          <span class="tag">OC 4.4+ GHz</span>
-          <span class="tag">Best single‑core v3</span>
+          <span class="tag">Mid‑range</span>
         </td>
         <td>2014‑09‑08</td>
-        <td class="numeric">85</td>  <!-- proche Ryzen 2600X en SC -->
-        <td class="numeric">70</td>
+        <td class="numeric">72</td>
+        <td class="numeric">52</td>
       </tr>
-
       <tr>
-        <td>Xeon E5‑1650 v3</td>
-        <td class="numeric">6</td>
-        <td class="numeric">12</td>
-        <td class="numeric">15</td>
-        <td class="numeric">3.5</td>
-        <td class="numeric">3.8</td>
+        <td>Xeon E5‑2630 v3</td>
+        <td>v3</td>
+        <td class="numeric">8</td>
+        <td class="numeric">16</td>
+        <td class="numeric">20</td>
+        <td class="numeric">2.4</td>
+        <td class="numeric">3.2</td>
         <td>
-          <span class="tag">OC possible</span>
+          <span class="tag">Entrée serveur</span>
         </td>
         <td>2014‑09‑08</td>
-        <td class="numeric">80</td>
-        <td class="numeric">60</td>
+        <td class="numeric">68</td>
+        <td class="numeric">48</td>
       </tr>
-
       <tr>
         <td>Xeon E5‑2620 v3</td>
+        <td>v3</td>
         <td class="numeric">6</td>
         <td class="numeric">12</td>
         <td class="numeric">15</td>
@@ -214,9 +537,176 @@
         <td class="numeric">55</td>
         <td class="numeric">45</td>
       </tr>
+      <tr>
+        <td>Xeon E5‑2609 v3</td>
+        <td>v3</td>
+        <td class="numeric">6</td>
+        <td class="numeric">6</td>
+        <td class="numeric">15</td>
+        <td class="numeric">1.9</td>
+        <td class="numeric">1.9</td>
+        <td>
+          <span class="tag">Sans Turbo</span>
+        </td>
+        <td>2014‑09‑08</td>
+        <td class="numeric">38</td>
+        <td class="numeric">32</td>
+      </tr>
 
-      <!-- Ajoute ici tous les autres Xeon E5 que tu veux,
-           en gardant la même structure de colonnes. -->
+      <!-- E5-1600 v3/v4 – X99 single-socket -->
+      <tr>
+        <td>Xeon E5‑1680 v3</td>
+        <td>v3</td>
+        <td class="numeric">8</td>
+        <td class="numeric">16</td>
+        <td class="numeric">20</td>
+        <td class="numeric">3.2</td>
+        <td class="numeric">3.8</td>
+        <td>
+          <span class="tag">Unlocked</span>
+          <span class="tag">OC 4.4+ GHz</span>
+          <span class="tag">Best SC v3</span>
+        </td>
+        <td>2014‑09‑08</td>
+        <td class="numeric">90</td>
+        <td class="numeric">70</td>
+      </tr>
+      <tr>
+        <td>Xeon E5‑1660 v3</td>
+        <td>v3</td>
+        <td class="numeric">8</td>
+        <td class="numeric">16</td>
+        <td class="numeric">20</td>
+        <td class="numeric">3.0</td>
+        <td class="numeric">3.5</td>
+        <td>
+          <span class="tag">OC possible</span>
+        </td>
+        <td>2014‑09‑08</td>
+        <td class="numeric">85</td>
+        <td class="numeric">66</td>
+      </tr>
+      <tr>
+        <td>Xeon E5‑1650 v3</td>
+        <td>v3</td>
+        <td class="numeric">6</td>
+        <td class="numeric">12</td>
+        <td class="numeric">15</td>
+        <td class="numeric">3.5</td>
+        <td class="numeric">3.8</td>
+        <td>
+          <span class="tag">OC possible</span>
+        </td>
+        <td>2014‑09‑08</td>
+        <td class="numeric">82</td>
+        <td class="numeric">60</td>
+      </tr>
+      <tr>
+        <td>Xeon E5‑1630 v3</td>
+        <td>v3</td>
+        <td class="numeric">4</td>
+        <td class="numeric">8</td>
+        <td class="numeric">10</td>
+        <td class="numeric">3.7</td>
+        <td class="numeric">3.8</td>
+        <td>
+          <span class="tag">Workstation</span>
+        </td>
+        <td>2014‑09‑08</td>
+        <td class="numeric">80</td>
+        <td class="numeric">40</td>
+      </tr>
+      <tr>
+        <td>Xeon E5‑1620 v3</td>
+        <td>v3</td>
+        <td class="numeric">4</td>
+        <td class="numeric">8</td>
+        <td class="numeric">10</td>
+        <td class="numeric">3.5</td>
+        <td class="numeric">3.6</td>
+        <td>
+          <span class="tag">Entrée WS</span>
+        </td>
+        <td>2014‑09‑08</td>
+        <td class="numeric">78</td>
+        <td class="numeric">38</td>
+      </tr>
+
+      <tr>
+        <td>Xeon E5‑1680 v4</td>
+        <td>v4</td>
+        <td class="numeric">8</td>
+        <td class="numeric">16</td>
+        <td class="numeric">20</td>
+        <td class="numeric">3.4</td>
+        <td class="numeric">3.8</td>
+        <td>
+          <span class="tag">Workstation</span>
+        </td>
+        <td>2016‑03‑31</td>
+        <td class="numeric">82</td>
+        <td class="numeric">72</td>
+      </tr>
+      <tr>
+        <td>Xeon E5‑1660 v4</td>
+        <td>v4</td>
+        <td class="numeric">8</td>
+        <td class="numeric">16</td>
+        <td class="numeric">20</td>
+        <td class="numeric">3.2</td>
+        <td class="numeric">3.8</td>
+        <td>
+          <span class="tag">Workstation</span>
+        </td>
+        <td>2016‑03‑31</td>
+        <td class="numeric">80</td>
+        <td class="numeric">68</td>
+      </tr>
+      <tr>
+        <td>Xeon E5‑1650 v4</td>
+        <td>v4</td>
+        <td class="numeric">6</td>
+        <td class="numeric">12</td>
+        <td class="numeric">15</td>
+        <td class="numeric">3.6</td>
+        <td class="numeric">4.0</td>
+        <td>
+          <span class="tag">Workstation</span>
+        </td>
+        <td>2016‑03‑31</td>
+        <td class="numeric">85</td>
+        <td class="numeric">62</td>
+      </tr>
+      <tr>
+        <td>Xeon E5‑1630 v4</td>
+        <td>v4</td>
+        <td class="numeric">4</td>
+        <td class="numeric">8</td>
+        <td class="numeric">10</td>
+        <td class="numeric">3.7</td>
+        <td class="numeric">4.0</td>
+        <td>
+          <span class="tag">Workstation</span>
+        </td>
+        <td>2016‑03‑31</td>
+        <td class="numeric">83</td>
+        <td class="numeric">42</td>
+      </tr>
+      <tr>
+        <td>Xeon E5‑1620 v4</td>
+        <td>v4</td>
+        <td class="numeric">4</td>
+        <td class="numeric">8</td>
+        <td class="numeric">10</td>
+        <td class="numeric">3.5</td>
+        <td class="numeric">3.8</td>
+        <td>
+          <span class="tag">Entrée WS</span>
+        </td>
+        <td>2016‑03‑31</td>
+        <td class="numeric">80</td>
+        <td class="numeric">40</td>
+      </tr>
     </tbody>
   </table>
 
@@ -224,7 +714,7 @@
     (function () {
       const table = document.getElementById("xeonTable");
       const headers = table.querySelectorAll("th");
-      let sortState = {}; // {index: 'asc'|'desc'}
+      let sortState = {};
 
       function compareValues(a, b, type) {
         if (type === "number") {
@@ -246,12 +736,10 @@
         rows.sort((rowA, rowB) => {
           const cellA = rowA.children[index].textContent.trim();
           const cellB = rowB.children[index].textContent.trim();
-
           const cmp = compareValues(cellA, cellB, type);
           return currentState === "asc" ? cmp : -cmp;
         });
 
-        // Réinjecte les lignes triées
         rows.forEach(row => tbody.appendChild(row));
       }
 
